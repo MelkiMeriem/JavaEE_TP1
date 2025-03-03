@@ -42,24 +42,37 @@ public class ProduitDAO {
 
     public List<Produit> getAllProduits() {
         List<Produit> produits = new ArrayList<>();
+
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_PRODUITS)) {
             ResultSet rs = preparedStatement.executeQuery();
-            while (rs.next()) {
-                Produit produit = new Produit();
-                produit.setId(rs.getInt("id"));
-                produit.setNom(rs.getString("nom"));
-                produit.setDescription(rs.getString("description"));
-                produit.setPrix(rs.getDouble("prix"));
-                produit.setImage(rs.getString("image"));
-                produits.add(produit);
+
+            // Check if any data was returned
+            if (!rs.next()) {
+                System.out.println("No products found in the database.");
+            } else {
+                do {
+                    Produit produit = new Produit();
+                    produit.setId(rs.getInt("id"));
+                    produit.setNom(rs.getString("nom"));
+                    produit.setDescription(rs.getString("description"));
+                    produit.setPrix(rs.getDouble("prix"));
+                    produit.setImage(rs.getString("image"));
+                    produits.add(produit);
+
+                } while (rs.next());
+                System.out.println(produits);
+
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("Error occurred while retrieving products.");
         }
         System.out.println("Produits récupérés : " + produits.size());
         return produits;
     }
+
 
     public void ajouterProduit(Produit produit) {
         try (

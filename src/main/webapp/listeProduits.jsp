@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+<%@ include file="menu.jsp" %>
+
 <h1>Liste des Produits</h1>
 <a href="produit?action=ajouter">Ajouter un produit</a>
 <div class="product-list">
@@ -15,7 +17,6 @@
         <div class="product-card">
             <img src="${produit.image}" alt="${produit.nom}">
             <h2>${produit.nom}</h2>
-            <p>${produit.description}</p>
             <p class="price">$${produit.prix}</p>
             <a href="produit?action=modifier&id=${produit.id}">Modifier</a>
             <a href="produit?action=supprimer&id=${produit.id}">Supprimer</a>

@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Ajouter un Produit</h1>
-<form action="produit" method="post">
+<form action="produit" method="post" enctype="multipart/form-data">
     <input type="hidden" name="action" value="ajouter">
     <label for="nom">Nom :</label>
     <input type="text" id="nom" name="nom" required><br>
@@ -18,9 +18,10 @@
     <label for="prix">Prix :</label>
     <input type="number" id="prix" name="prix" step="0.01" required><br>
     <label for="image">Image :</label>
-    <input type="text" id="image" name="image" required><br>
+    <input type="file" id="image" name="image" required><br>
     <button type="submit">Ajouter</button>
 </form>
+
 <a href="produit">Retour à la liste</a>
 </body>
 </html>
