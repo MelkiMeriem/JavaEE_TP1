@@ -9,12 +9,16 @@
 </head>
 <body>
 <h1>Détails du Produit</h1>
-<div class="product-details">
+<div class="product-list">
+<div class="product-card">
     <img src="${produit.image}" alt="${produit.nom}">
     <h2>${produit.nom}</h2>
     <p>${produit.description}</p>
     <p class="price">$${produit.prix}</p>
+
+</div>
 </div>
 <a href="produit">Retour à la liste</a>
+
 </body>
 </html>

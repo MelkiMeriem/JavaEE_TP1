@@ -15,7 +15,6 @@
         <div class="product-card">
             <img src="${produit.image}" alt="${produit.nom}">
             <h2>${produit.nom}</h2>
-            <p>${produit.description}</p>
             <p class="price">$${produit.prix}</p>
             <a href="produit?action=modifier&id=${produit.id}">Modifier</a>
             <a href="produit?action=supprimer&id=${produit.id}">Supprimer</a>
