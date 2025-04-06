@@ -17,7 +17,6 @@
 <nav class="navbar">
     <a href="produit" class="logo">Mon E-Commerce</a>
     <ul class="nav-links">
-        <li><a href="produit">Accueil</a></li>
         <li><a href="produit?action=list">Produits</a></li>
         <% if (user == null) { %>
         <li><a href="login.jsp">Connexion</a></li>
