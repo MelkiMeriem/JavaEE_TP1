@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<jsp:include page="menu.jsp"/>
 <h1>Modifier un Produit</h1>
 <form action="produit" method="post">
     <input type="hidden" name="action" value="modifier">
