@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<jsp:include page="menu.jsp"/>
 <h1>Modifier un Produit</h1>
-<form action="produit" method="post">
+<form action="produit" method="post" onsubmit="return confirmerModification();">
     <input type="hidden" name="action" value="modifier">
     <input type="hidden" name="id" value="${produit.id}">
     <label for="nom">Nom :</label>
@@ -23,5 +24,12 @@
     <button type="submit">Modifier</button>
 </form>
 <a href="produit">Retour à la liste</a>
+
+<script>
+    function confirmerModification() {
+        return confirm("Êtes-vous sûr de vouloir modifier ce produit ?");
+    }
+</script>
+
 </body>
 </html>

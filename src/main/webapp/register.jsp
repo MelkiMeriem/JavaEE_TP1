@@ -17,6 +17,7 @@
   <label for="password">Mot de passe :</label>
   <input type="password" name="password" required>
 
+
   <button type="submit">S'inscrire</button>
 </form>
 </body>
